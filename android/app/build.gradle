@@ -93,6 +93,7 @@ android {
     namespace "com.calendarsexample"
 
     defaultConfig {
+        namespace "com.reactnativecalendars"
         applicationId "com.calendarsexample"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
