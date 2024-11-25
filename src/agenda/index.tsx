@@ -402,7 +402,7 @@ export default class Agenda extends Component<AgendaProps, State> {
   };
 
   render() {
-    const {hideKnob, style, testID} = this.props;
+    const {hideKnob, style, testID, hideCalendar} = this.props;
     const agendaHeight = this.initialScrollPadPosition();
     const weekdaysStyle = [
       this.style.weekdays,
@@ -456,6 +456,11 @@ export default class Agenda extends Component<AgendaProps, State> {
       height: KNOB_HEIGHT,
       top: scrollPadPosition,
     };
+    if (hideCalendar) {
+      return (<View testID={testID} onLayout={this.onLayout} style={[style, this.style.container]}>
+        <View style={this.style.reservations}>{this.renderReservations()}</View>
+      </View>);
+    }
 
     return (
       <View testID={testID} onLayout={this.onLayout} style={[style, this.style.container]}>
